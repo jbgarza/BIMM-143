@@ -1,0 +1,275 @@
+---
+title: "Class 6: R Functions"
+author: "James Garza (PID: A16300772)"
+date: 01/25/24
+format: pdf
+---
+
+## R Functions
+
+Functions are how we get stuff done.  We call functions to do everything useful in R.
+
+One cool thing about R is that ir makes writing your own functions comparatively easy.
+
+All functions in R have at least three things:
+
+- A **name** (we get to pick this)
+- One or more **input arguments** (the input to our function)
+- The **body** (line of code that do the work)
+
+```{r}
+#| eval: false
+
+#funname <- function(input1, input2) { #The body with R code }
+```
+
+
+Let's write a silly first function to add two numbers:
+
+```{r}
+x <- 5
+y <- 1
+x + y
+```
+
+```{r my fun}
+addme <- function(x, y=1) {x + y
+  }
+```
+
+```{r}
+addme(100,100)
+```
+
+```{r}
+addme(10)
+```
+
+## Lab for today
+
+```{r}
+# Example input vectors to start with
+student1 <- c(100, 100, 100, 100, 100, 100, 100, 90)
+student2 <- c(100, NA, 90, 90, 90, 90, 97, 80)
+student3 <- c(90, NA, NA, NA, NA, NA, NA, NA)
+```
+
+```{r}
+grade_func <- function(x) {mean(x, na.rm=TRUE)}
+```
+```{r}
+grade_func(student1)
+grade_func(student2)
+grade_func(student3)
+```
+
+```{r}
+df <- data.frame(student1, student2, student3)
+```
+
+```{r}
+grade_func <- function(x) {(sum(x, na.rm=TRUE)-min(x, na.rm = TRUE))/(which.min(x)-1)}
+
+grade_func(student1)
+grade_func(student2)
+grade_func(student3)
+```
+
+```{r}
+student1[which.min(student1)]
+```
+
+```{r}
+grade_2 <-function(x) {mean(x[-which.min(x)], na.rm=TRUE)}
+
+grade_2(student1)
+grade_2(student2)
+grade_2(student3)
+```
+
+```{r}
+ind <- which.min(x)
+# Find the lowest score
+mean(student1[-which.min(student1)])
+# remove tlowest score and find the mean
+```
+
+Use a common shortcut and use`x` as my input
+```{r}
+x1 <- student1
+x2 <- student2
+x3 <- student3
+mean(x1[-which.min(x1)])
+```
+```{r}
+is.na(x) <- 0
+
+student3
+```
+```{r}
+grade_func <- function(x) {(sum(x, na.rm=TRUE)-min(x, na.rm = TRUE))/(which.min(x)-1)}
+
+grade_func(student1)
+grade_func(student2)
+grade_func(student3)
+```
+
+Replace NA values with zeroes.
+
+```{r}
+y <- 1:5
+y[y == 3] <- 10000
+y
+```
+
+```{r}
+y <- c(1,2,NA,4,5)
+y == NA
+```
+
+```{r}
+is.na(y)
+```
+
+How can I remove the NA elements from the vector?
+I first need to flip the true elements
+```{r}
+!c(F,F,F)
+#y[is.na(y)]
+```
+
+```{r}
+y[!is.na(y)]
+```
+
+```{r}
+y[is.na(y)] <- 0
+y
+```
+
+
+
+Testing that we can turn the NA values to be equivalent to the value 0
+
+```{r}
+is.na(x3) <- 0
+x3 <- ifelse(is.na(x3), 0, x3)
+x3
+is.na(x2) <- 0
+x2 <- ifelse(is.na(x2), 0, x2)
+x2
+is.na(x1) <- 0
+x1 <- ifelse(is.na(x1), 0, x1)
+x1
+
+```
+
+```{r}
+no_na <- function(x) {is.na(x) <- 0}
+
+no_na(x2)
+x2
+```
+
+We still have the problem of missing values.
+
+Okay let's put Humpty Dumpty back together
+NA values have been changed to 0
+
+Last step, working code snippet with the grade function
+
+```{r}
+grade <-function(x) {
+  x[is.na(x)] <-0
+  mean(x[-which.min(x)], na.rm=TRUE)}
+
+grade(x1)
+grade(x2)
+grade(x3)
+```
+
+## Q1
+
+grade function code: **grade <-function(x) {x[is.na(x)] <-0  mean(x[-which.min(x)], na.rm=TRUE)}**
+
+
+
+```{r}
+url <- "https://tinyurl.com/gradeinput"
+gradebook <- read.csv(url, row.names = 1)
+
+head(gradebook)
+```
+Function: APPLY() ; it takes multiple arguments and applies it over to a data set
+apply(input = gradebook, Margin, fun = grade)
+what is the margin argument? indicates the rows or the columns
+1 indicates rows and 2 indicates columns
+
+```{r}
+all_grades <- apply(gradebook,1,grade)
+all_grades
+```
+
+## Q2
+Top Scoring Students:
+```{r}
+which.max(all_grades)
+```
+
+## Q3
+
+```{r}
+all_h <- apply(gradebook, 2, mean, na.rm=TRUE)
+all_h
+which.min(all_h)
+```
+
+
+```{r}
+all_hw <- apply(gradebook, 2, sum, na.rm=TRUE)
+all_hw
+```
+```{r}
+which.min(all_hw)
+```
+
+## Q4
+Correlation between Homework Scores and Grade Scores
+
+```{r}
+# Make all (or mask) NA to zero
+mask <- gradebook
+mask[is.na(mask)] <- 0
+mask
+```
+
+We can use the `cor()` function for correlational analysis.
+
+```{r}
+cor(mask$hw1, all_grades)
+cor(mask$hw2, all_grades)
+cor(mask$hw3, all_grades)
+cor(mask$hw4, all_grades)
+cor(mask$hw5, all_grades)
+```
+
+```{r}
+apply(mask, 2, cor, all_grades)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

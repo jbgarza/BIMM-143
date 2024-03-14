@@ -1,0 +1,48 @@
+---
+title: "Class 19"
+format: html
+---
+
+```{r}
+library(bio3d)
+
+fasta_file <- read.fasta("A16300772_mutant_seq.fa")
+```
+
+```{r}
+fasta_file
+```
+
+
+```{r}
+seqidentity(fasta_file)
+```
+```{r}
+fasta_file$id
+```
+
+```{r}
+fasta_file$ali[1,]
+```
+
+```{r}
+fasta_file$ali[2,]
+```
+
+```{r}
+pos <- which(conserv(fasta_file) !=1.0)
+```
+
+```{r}
+fasta_file$ali[,166]
+
+fasta_file$ali[,177]
+
+fasta_file$ali[,189]
+
+fasta_file$ali[,246]
+```
+```{r}
+paste(fasta_file$ali[1, pos], pos, sep="")
+```
+

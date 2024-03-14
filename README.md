@@ -10,7 +10,7 @@ Class work from Winter 2024 for [BIMM 143](https://bioboot.github.io/bimm143_W24
 
 - Class 3 
 
-- Class 4 [Bioinformatics Data Analysis with R](https://github.com/jbgarza/BIMM-143/blob/main/class04/class4.md)
+- Class 4 [Bioinformatics Data Analysis with R](https://github.com/jbgarza/BIMM-143/blob/main/class04/class4.pdf)
 
 - Class 5 [Data Exploration and Visualization with R](https://github.com/jbgarza/BIMM-143/blob/main/class05/class05.md))
 

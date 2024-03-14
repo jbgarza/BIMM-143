@@ -16,7 +16,7 @@ Class work from Winter 2024 for [BIMM 143](https://bioboot.github.io/bimm143_W24
 
 - Class 6 [Why, When and How of Writing Your Own R Functions](https://github.com/jbgarza/BIMM-143/blob/main/class06/class06.pdf)
 
-- Class 7 
+- Class 7 [Introduction to Machine Learning for Bioinformatics](https://github.com/jbgarza/BIMM-143/blob/main/class07/class07.pdf)
 
 - Class 8
 

@@ -20,9 +20,9 @@ Class work from Winter 2024 for [BIMM 143](https://bioboot.github.io/bimm143_W24
 
 - Class 8 [Unsupervised Learning Mini-Project](https://github.com/jbgarza/BIMM-143/blob/main/class08/class08.pdf)
 
-- Class 9 [Halloween Candy Mini-Project]()
+- Class 9 [Halloween Candy Mini-Project](https://github.com/jbgarza/BIMM-143/blob/main/class09/Class09_Halloween_candy.pdf)
 
-- Class 10
+- Class 10 [Structural Bioinformatics Part 1]()
 
 - Class 11
 

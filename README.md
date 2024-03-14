@@ -18,7 +18,7 @@ Class work from Winter 2024 for [BIMM 143](https://bioboot.github.io/bimm143_W24
 
 - Class 7 [Introduction to Machine Learning for Bioinformatics](https://github.com/jbgarza/BIMM-143/blob/main/class07/class07.pdf)
 
-- Class 8
+- Class 8 [Unsupervised Learning Mini-Project](https://github.com/jbgarza/BIMM-143/blob/main/class08/class08.pdf)
 
 - Class 9
 

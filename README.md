@@ -43,4 +43,4 @@ Class work from Winter 2024 for [BIMM 143](https://bioboot.github.io/bimm143_W24
 - Class 19
 
 - Class 20
->>>>>>> 8efedfa6a7340ad1cf40a873ebdcdf817ba0a80f
+

@@ -1,0 +1,26 @@
+This is just a text editor...
+pwd: print working directory
+ls: list files
+cd: change directory
+mkdir: make a new directory
+rm: remove / delete files (will delete your entire disc if not careful)
+nano: a very basic text editor
+
+Public IP Address:
+44.242.174.116
+
+Example:
+
+Run this command, if necessary, to ensure your key is not publicly viewable.
+ chmod 400 "bimm143_james.pem"
+Connect to your instance using its Public DNS:
+ ec2-44-242-174-116.us-west-2.compute.amazonaws.com
+Example:
+ ssh -i "bimm143_james.pem" ubuntu@ec2-44-242-174-116.us-west-2.compute.amazonaws.com
+
+Control c is force quit on a job and cancels it
+
+Control z stops a job and puts it on pause then use fg to resume it, can use bg to run the job in the
+ background and use & to run in background from the start
+
+

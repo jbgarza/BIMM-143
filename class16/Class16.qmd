@@ -1,0 +1,41 @@
+---
+title: "Class16"
+format: pdf
+author: James Garza
+PID: A16300772
+---
+
+
+
+
+
+```{r}
+zb <- read.table(file = 'mm-second.x.zebrafish.tsv', sep='\t')
+colnames(zb) <- c("qseqid", "sseqid", "pident", "length", "mismatch", "gapopen", "qstart", "qend", "sstart", "send", "evalue", "bitscore")
+head(zb)
+```
+
+
+```{r}
+## Asuming your blast results are stored in an object called 'b'
+plot(zb$pident  * (zb$qend - zb$qstart), zb$bitscore)
+```
+
+```{r}
+library(ggplot2)
+ggplot(zb, aes(pident, bitscore)) + geom_point(alpha=0.1) 
+```
+
+There appears to be a positive relationship between pident and bitscore as the data is positively correlated.
+
+```{r}
+ggplot(zb, aes((zb$pident * (zb$qend - zb$qstart)), bitscore)) + geom_point(alpha=0.1) + geom_smooth()
+```
+
+```{r}
+hist(zb$bitscore, breaks = 30)
+```
+As the bitscores increase, the frequency of high bitscores tends to decrease.
+
+
+

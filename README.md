@@ -4,13 +4,13 @@ Class work from Winter 2024 for [BIMM 143](https://bioboot.github.io/bimm143_W24
 
 ## Contents
 
-- Class 
+- Class 1
 
-- Class
+- Class 2
 
-- Class 
+- Class 3
 
-- Class
+- Class 4
 
 - Class 5 [Data Exploration and Visualization with R](https://bioboot.github.io/bimm143_W24/schedule/#5)
 
